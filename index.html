@@ -1,28 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function DRO Grasp</title>
+<html>
+  <head>
+    <title>Functional D(R,O) Grasp</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="Anonymous">
+    <meta name="viewport" content="width=800px, initial-scale=0.8, maximum-scale=2.0, user-scalable=yes">
+    <meta name="google-site-verification" content="ky_GtW3ix1x6MhH-pM6PonkpJCmE-237rRUvxvyQjVs" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            font-size: 3rem;
-            color: #333;
-            text-align: center;
-        }
+      .title {
+        font-family: 'Montserrat', sans-serif !important;
+      }
     </style>
-</head>
-<body>
-    <h1>Function DRO Grasp</h1>
-</body>
+    <!-- <link rel="icon" href="./static/image/favicon.png"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <!-- MathJax -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>        
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      });
+    </script>
+
+    <!-- visitor statistics -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!-- model-viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  </head>
+
+
+  <body>
+    <!-- Title -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Functional $\small \mathcal{D(R,O)}$ Grasp: 
+                <br>
+                A Language-Guided 
+                <br>
+                Cross-Embodiment 
+                <br>
+                Functional Dexterous Grasping</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  Anonymous Authors
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <div>
+                  <span class="author-block">Anonymous Institution</span>
+                </div>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="./static/data/Functional_D(R,O)_Grasp.pdf" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="./static/data/appendix.pdf" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Appendix</span>
+                    </a>
+                  </span>
+
+                  <!-- Code Link -->
+                  <span class="link-block">
+                    <a href="https://github.com/zhenyuwei2003/DRO-Grasp" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code(Comming Soon)</span>
+                    </a>
+                  </span>
+
+                  <!-- Dataset Link -->
+                  <span class="link-block">
+                    <a href="https://github.com/zhenyuwei2003/DRO-Grasp/releases/tag/v1.0" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Data(Comming Soon)</span>
+                    </a>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video id="intro" controls playsinline height="100%" class="video-with-border">
+            <source src="./static/data/video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+    <!--/ Video -->
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column" style="max-width:900px; margin:0 auto;">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Functional dexterous grasping is a challenging capability essential for robots to achieve intent-aligned interactions with objects. Existing methods primarily focus on grasp stability without addressing functional intent. In this work, we present Functional $\mathcal{D(R,O)}$  Grasp, a language-guided framework that enables intent-aligned grasp generation while ensuring cross-platform adaptability. We learn platform-agnostic intermediate representations that enable translation from functional grasp language input to execution across different robotic hands. This framework generates appropriate grasps for objects based on their intended use, covering multiple functional requirements (use, hold, handover, liftup). We demonstrate that our approach achieves a 75.1% success rate in simulation on unseen objects, significantly outperforming baselines. Real-world experiments with the LeapHand platform further validate our approach. Our work bridges the gap between functional intent and cross-platform dexterous execution, enabling robots to perform purposeful grasps with a single unified model.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract -->
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Overview -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column" style="max-width:900px; margin:0 auto;">
+            <h2 class="title is-3">Pipeline Overview</h2>
+            <div class="content has-text-justified">
+              <div style="width:100%;display:flex;flex-direction:column;align-items:center;">
+                <img src="./static/image/pipeline.png"
+                     alt="Overview of D(R,O) Grasp framework"
+                     style="width:100%;max-width:1600px;height:auto;display:block;margin:2.5rem 0 1.5rem 0;">
+                <div style="max-width:100%;margin:0 auto 2.5rem auto;font-style:normal;font-size:1.1em;line-height:1.7;color:#444;">
+                  <div style="font-weight:600; font-size:1.15em; margin-bottom: 0.5em; text-align:center;">
+                    Overview of our Functional $\mathcal{D(R,O)}$ Grasp framework.
+                  </div>
+                  <div style="text-align:left;">
+                    <b>Left: Language-Conditioned Interaction Synthesis</b> translates functional instructions into wrist poses and contact anchor points via a diffusion model.
+                  </div>
+                  <div style="text-align:left;">
+                    <b>Right: Platform-Agnostic Grasp Refinement</b> converts these interaction elements into a unified hand-object distance representation to generate precise joint configurations across different robotic hands.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ Overview -->
+      </div>
+    </section>
+
+    <!-- Simulation Grasps -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Simulation Grasps</h2>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <!-- Model Viewer 1 for ShadowHand -->
+          <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+            <model-viewer
+              id="modelViewer1"
+              src="static/data/3dmodel/ShadowHand/bottle/0.glb"
+              alt="ShadowHand Grasp"
+              ar
+              camera-controls
+              auto-rotate
+              auto-rotate-delay="1000"
+              interaction-prompt-threshold="2000"
+              style="width: 200px; height: 200px; border: 3px solid #66c0ff; border-radius: 15px;">
+            </model-viewer>
+            <p style="font-size: 20px; font-weight: bold;">ShadowHand</p>
+          </div>
+    
+          <!-- Model Viewer 2 for Allegro -->
+          <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+            <model-viewer
+              id="modelViewer2"
+              src="static/data/3dmodel/Allegro/bottle/0.glb"
+              alt="Allegro Grasp"
+              ar
+              camera-controls
+              auto-rotate
+              auto-rotate-delay="1000"
+              interaction-prompt-threshold="2000"
+              style="width: 200px; height: 200px; border: 3px solid #66c0ff; border-radius: 15px;">
+            </model-viewer>
+            <p style="font-size: 20px; font-weight: bold;">Allegro</p>
+          </div>
+    
+          <!-- Model Viewer 3 for Leap -->
+          <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+            <model-viewer
+              id="modelViewer3"
+              src="static/data/3dmodel/Leap/bottle/0.glb"
+              alt="Leap Grasp"
+              ar
+              camera-controls
+              auto-rotate
+              auto-rotate-delay="1000"
+              interaction-prompt-threshold="2000"
+              style="width: 200px; height: 200px; border: 3px solid #66c0ff; border-radius: 15px;">
+            </model-viewer>
+            <p style="font-size: 20px; font-weight: bold;">Leap</p>
+          </div>
+    
+          <!-- Controls for Object and Grasp ID -->
+          <div class="column is-one-quarter">
+            <!-- Object Name Dropdown -->
+            <div class="dropdown-container" style="text-align: center; margin-top: 10px; margin-bottom: 20px;">
+              <label for="objectName" style="font-size: 20px; font-weight: bold;">Object Name</label>
+              <select id="objectName" class="custom-select" style="width: 200px; margin-top: 10px;">
+                <option value="bottle" style="font-size: 14px;">bottle</option>
+                <option value="mug" style="font-size: 14px;">mug</option>
+              </select>
+            </div>
+
+            <script>
+              function adjustSelectedFontSize() {
+                const selectElement = document.getElementById("objectName");
+                const selectedText = selectElement.options[selectElement.selectedIndex].text;
+                
+                const fontSize = Math.min(16, 320 / selectedText.length);
+                selectElement.style.fontSize = fontSize + "px";
+                const paddingSize = (32 - fontSize) / 2
+                selectElement.style.paddingTop = paddingSize + "px";
+                selectElement.style.paddingBottom = paddingSize + "px";
+              }
+            
+              window.onload = adjustSelectedFontSize;
+              document.getElementById("objectName").addEventListener("change", adjustSelectedFontSize);
+            </script>
+          
+            <!-- Grasp ID and Slider -->
+            <div class="slider-container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <div style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+                Grasp ID: 
+                <span id="graspIDLabel">0</span>
+              </div>
+              <input type="range" id="graspID" name="graspID" min="0" max="0" value="0" style="width: 200px; height: 15px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const modelViewer1 = document.getElementById('modelViewer1');
+      const modelViewer2 = document.getElementById('modelViewer2');
+      const modelViewer3 = document.getElementById('modelViewer3');
+      const objectNameSelect = document.getElementById('objectName');
+      const graspIDSlider = document.getElementById('graspID');
+      const graspIDLabel = document.getElementById('graspIDLabel');
+
+      const robotNames = ["ShadowHand", "Allegro", "Leap"];
+
+      function updateModel() {
+        const selectedObject = objectNameSelect.value;
+        const selectedGraspID = graspIDSlider.value;
+
+        graspIDLabel.textContent = selectedGraspID;
+
+        modelViewer1.src = `static/data/3dmodel/ShadowHand/${selectedObject}/${selectedGraspID}.glb`;
+        modelViewer2.src = `static/data/3dmodel/Allegro/${selectedObject}/${selectedGraspID}.glb`;
+        modelViewer3.src = `static/data/3dmodel/Leap/${selectedObject}/${selectedGraspID}.glb`;
+      }
+      objectNameSelect.addEventListener('change', updateModel);
+      graspIDSlider.addEventListener('input', updateModel);
+    </script>
+    <!--/ Simulation Grasps -->
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Real-world Demos</h2>
+          </div>
+        </div>
+    
+        <div class="columns is-centered has-text-centered">
+          <section class="video-section" style="display: flex; padding: 20px;">
+            <div class="main-video-container" style="flex: 2; margin-top: 25px; margin-right: 50px; text-align: center;">
+              <!-- <video id="main-video" autoplay muted loop playsinline style="width: 700px;" class="video-with-border">
+                <source src="static/data/realworld/bottle.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video> -->
+              <img id="main-image" src="static/data/realworld/bottle.jpg" style="width: 700px;" class="video-with-border">
+            </div>
+          
+            <div class="covers-container" style="flex: 1; overflow-y: auto; height: 600px; display: flex; flex-direction: column; align-items: center;">
+              <!-- <div class="video-cover" onclick="changeVideo('static/data/realworld/bottle.mp4')" style="margin-bottom: 10px; cursor: pointer;"> -->
+              <div class="video-cover" onclick="changeImage('static/data/realworld/bottle.jpg')" style="margin-bottom: 10px; cursor: pointer;"></div>
+                <img src="static/data/realworld/bottle.jpg" alt="Bottle Cover" style="width: 120px; height: 120px;">
+                <p style="text-align: center;">Bottle</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    
+    <script>
+      function changeVideo(videoSrc) {
+        const mainVideo = document.getElementById('main-video');
+        mainVideo.src = videoSrc;
+        mainVideo.muted = true;
+        mainVideo.loop = true;
+        mainVideo.load();
+        mainVideo.play();
+      }
+    </script>
+    
+
+    <!-- BibTex -->
+    <!-- <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{wei2024functional,
+            title={Functional D(R,O) Grasp: A Language-Guided Cross-Embodiment Functional Dexterous Grasping},
+            author={Anonymous Authors},
+            journal={},
+            year={2025}
+        }</code></pre>
+      </div>
+    </section> -->
+    <!--/ BibTex -->
+
+    <!-- Footer -->
+    <footer class="footer", style="padding: 40px 0;">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p style="text-align: center;">
+                This website is designed based on
+                <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                <br>
+                Thanks for your visiting😊!
+                <span id="busuanzi_container_site_pv">
+                  Total Page Views: <span id="busuanzi_value_site_pv"></span>
+                </span>
+                <br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--/ Footer -->
+
+  </body>
 </html>
